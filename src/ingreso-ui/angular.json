@@ -48,6 +48,14 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "vs": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
             }
           }
         },
@@ -59,6 +67,9 @@
           "configurations": {
             "production": {
               "browserTarget": "ingreso:build:production"
+            },
+            "vs": {
+              "browserTarget": "ingreso:build:vs"
             }
           }
         },

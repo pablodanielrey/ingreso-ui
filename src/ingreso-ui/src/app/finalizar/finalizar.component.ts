@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinalizarComponent implements OnInit {
 
-  public n:number=51;
+  n:number=51;
+  procesando: boolean = false;
 
   constructor() {
    setTimeout(() => {

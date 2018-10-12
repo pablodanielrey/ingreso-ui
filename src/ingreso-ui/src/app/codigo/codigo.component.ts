@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CodigoComponent implements OnInit {
 
-  public n:number=6;
+  n: number = 6;
+  procesando: boolean = false;
 
   constructor() {
    setTimeout(() => {

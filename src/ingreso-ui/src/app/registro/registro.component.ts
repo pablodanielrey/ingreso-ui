@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  public n:number=1;
+  n: number = 1;
+  procesando: boolean = false;
 
   constructor() {
    setTimeout(() => {
