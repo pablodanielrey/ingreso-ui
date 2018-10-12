@@ -1,21 +1,12 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-src/dist
-src/tmp
-src/out-tsc
+src/ingreso-ui/dist
+src/ingreso-ui/tmp
+src/ingreso-ui/out-tsc
 
 # dependencies
-src/node_modules
-
-# IDEs and editors
-src/.idea
-src/.project
-src/.classpath
-src/.c9/
-src/*.launch
-src/.settings/
-src&*.sublime-workspace
+src/ingreso-ui/node_modules
 
 # IDE - VSCode
 .vscode/*
