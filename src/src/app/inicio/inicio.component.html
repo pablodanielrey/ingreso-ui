@@ -1,0 +1,33 @@
+<mat-progress-bar mode="indeterminate" *ngIf="procesando"></mat-progress-bar>
+
+<div class="inicio" *ngIf="!procesando">
+
+  <div class="contenedorRegistro">
+    <p class="textCuentaDeUsuario">CUENTA DE USUARIO FCE<p>
+    <p class="textRegistrame">¡Registrarme ahora!</p>
+    <form class="formulario">
+      <mat-form-field class="itemFormulario">
+        <input matInput placeholder="Ingresa tu DNI" value="">
+      </mat-form-field>
+      <button mat-button class="btnRegistro" routerLink='/registro'>REGISTRARME</button>
+
+    </form>
+
+    <img class="imgLogoAlternativo" height="" width="" src="/assets/img/logo_fce.png">
+  </div>
+
+    <div class="bloqueInfo">
+      <h4>INGRESANTES 2019</h4>
+      <h1>ALTA DE USUARIO FCE</h1>
+      <p class="textPregunta">¿Para que necesito crear una cuenta de usuario de la Facultad de Ciencias Económicas?</p>
+      <p class="textRespuesta">Será necesario tener con una cuenta para acceder a los servicios informáticos de la FCE, como por ejemplo:
+        Aula Virtual (AU24), WiFi de la FCE, Inscripción a cursos de formación,
+        Inscripción al sistema de pasantías educativas, etc.
+      </p>
+      <mat-divider></mat-divider>
+      <div class="logoFCE">
+        <img class="imgLogo" height="" width="" src="/assets/img/logo_fce.png">
+      </div>
+
+    </div>
+</div>

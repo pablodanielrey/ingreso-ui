@@ -1,0 +1,31 @@
+.ingreso {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  background-color: #272727;
+  color: white;
+}
+
+.contenido {
+  height: 100%;
+  width: 100%;
+
+}
+
+.iconoSistema {
+  margin:0 10px 0 20px;
+}
+
+.textNombreSistema {
+  font-size: 18px;
+
+}
+
+
+@media screen and (min-width: 1600px){
+  .ingreso {
+    zoom:1.3;
+  }
+}

@@ -1,0 +1,128 @@
+.registro {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  flex-direction: row;
+  -moz-flex-direction: row;
+  -webkit-flex-direction: row;
+}
+
+// ----- CONTENEDOR IZQUIERDO ------
+
+.conenedorInfo {
+  width: 25%;
+  background-color: #4186e1;
+  padding: 40px;
+}
+
+.textCuentaDeUsuario {
+  margin: 15px 0 20px 0;
+  color: rgba(0,0,0,.8);
+}
+
+.textFormulario {
+  color: white;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.pasos {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  flex-direction: row;
+  -moz-flex-direction: row;
+  -webkit-flex-direction: row;
+  align-items: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  margin-top: 10px;
+}
+
+.textoPasosHAbilitado {
+  margin-bottom: 5px;
+  color: white;
+  margin-right: 5px;
+}
+
+.textoPasosDesabilitado {
+  margin-bottom: 5px;
+  color: rgba(0,0,0,.5);
+  margin-right: 5px;
+
+}
+
+// ----- CONTENEDOR DERECHO ------
+
+.contenedorFormulario {
+  padding: 40px;
+  width: 75%;
+}
+
+
+h1 {
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
+/deep/ .mat-progress-bar {
+  height: 3px !important;
+}
+
+/deep/ .mat-progress-bar-fill::after {
+  background-color: #4186e1 !important;
+}
+
+
+.mensajePrincipal {
+  margin-top: 20px;
+}
+
+.mensajeSecundario {
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.itemSistema {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  flex-direction: row;
+  -moz-flex-direction: row;
+  -webkit-flex-direction: row;
+  align-items: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  margin-top: 20px;
+
+}
+
+.iconosSistemas {
+  margin-right: 5px;
+}
+
+.textDetalleSistema {
+  color: rgba(0,0,0,0.8);
+  font-size: 14px;
+  margin: 0px 0 10px 0px;
+}
+
+.btnAcceder {
+  color: #4186e1;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 768px){
+  .conenedorInfo {
+    display: none;
+  }
+  .contenedorFormulario{
+    width: 100%;
+    padding-bottom: 40px;
+  }
+
+
+}

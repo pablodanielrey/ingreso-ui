@@ -1,0 +1,70 @@
+<mat-progress-bar mode="indeterminate" *ngIf="procesando"></mat-progress-bar>
+
+
+<div class="registro" *ngIf="!procesando">
+
+    <div class="conenedorInfo">
+
+      <p class="textCuentaDeUsuario">CUENTA DE USUARIO FCE<p>
+      <P class="textFormulario">Creación de cuenta de usuario para los servicios informáticos de la Facultad de Ciencias Económicas.</P>
+      <div class="pasos">
+          <div><i class="material-icons textoPasosHAbilitado">looks_one</i> </div>
+          <div><p class="textoPasosHAbilitado">Registración</p></div>
+      </div>
+      <div class="pasos">
+          <div><i class="material-icons textoPasosDesabilitado">looks_two</i> </div>
+          <div><p class="textoPasosDesabilitado">Confirmación de cuenta</p></div>
+      </div>
+      <div class="pasos">
+          <div><i class="material-icons textoPasosDesabilitado">looks_3</i> </div>
+          <div><p class="textoPasosDesabilitado">Finalizar</p></div>
+      </div>
+
+    </div>
+
+    <div class="contenedorFormulario">
+
+        <h1>Crear Cuenta</h1>
+        <mat-progress-bar mode="determinate" value="{{n}}"></mat-progress-bar>
+
+
+        <form class="formulario">
+            <mat-form-field class="itemFormulario">
+              <input matInput placeholder="Nombre" value="Walter Roberto">
+            </mat-form-field>
+            <mat-form-field class="itemFormulario">
+              <input matInput placeholder="Apellido" value="Blanco">
+            </mat-form-field>
+            <mat-form-field class="itemFormulario">
+              <input matInput placeholder="DNI" value="30001823">
+            </mat-form-field>
+            <mat-form-field class="itemFormulario">
+              <mat-select placeholder="Sexo">
+                <mat-option value="option">Femenino</mat-option>
+                <mat-option value="option">Masculino</mat-option>
+                <mat-option value="option">Otro</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="itemFormulario">
+              <mat-icon class="iconos" matPrefix>mail_outline</mat-icon>
+              <input matInput placeholder=" Correo Electrónico" value="">
+            </mat-form-field>
+            <mat-form-field class="itemFormulario">
+              <mat-icon class="iconos" matPrefix>mail_outline</mat-icon>
+              <input matInput placeholder="Repetir Correo Electrónico" value="">
+            </mat-form-field>
+            <mat-form-field class="itemFormulario">
+              <mat-icon class="iconos" matPrefix>lock_open</mat-icon>
+              <input matInput placeholder="Repetir Contraseña" [type]="hide ? 'password' : 'text'">
+            </mat-form-field>
+            <mat-form-field class="itemFormulario">
+              <mat-icon class="iconos" matPrefix>lock_open</mat-icon>
+              <input matInput  placeholder="Repetir Contraseña" [type]="hide ? 'password' : 'text'">
+                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            </mat-form-field>
+
+            <button mat-button class="btnSistema" routerLink='/codigo'>CONTINUAR</button>
+
+        </form>
+    </div>
+</div>

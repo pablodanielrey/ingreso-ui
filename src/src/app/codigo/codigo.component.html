@@ -1,0 +1,44 @@
+<mat-progress-bar mode="indeterminate" *ngIf="procesando"></mat-progress-bar>
+
+
+<div class="registro" *ngIf="!procesando">
+
+    <div class="conenedorInfo">
+
+        <p class="textCuentaDeUsuario">CUENTA DE USUARIO FCE<p>
+        <P class="textFormulario">Creación de cuenta de usuario para los servicios informáticos de la Facultad de Ciencias Económicas.</P>
+        <div class="pasos">
+            <div><i class="material-icons textoPasosDesabilitado">looks_one</i> </div>
+            <div><p class="textoPasosDesabilitado">Registración</p></div>
+        </div>
+        <div class="pasos">
+            <div><i class="material-icons textoPasosHAbilitado">looks_two</i> </div>
+            <div><p class="textoPasosHAbilitado">Confirmación de cuenta</p></div>
+        </div>
+        <div class="pasos">
+            <div><i class="material-icons textoPasosDesabilitado">looks_3</i> </div>
+            <div><p class="textoPasosDesabilitado">Finalizar</p></div>
+        </div>
+
+    </div>
+
+    <div class="contenedorFormulario">
+
+        <h1>Confirmar Cuenta</h1>
+        <mat-progress-bar mode="determinate" value="{{n}}"></mat-progress-bar>
+        <p class="mensajePrincipal">Te hemos enviado un código de confirmación a <b>lllwalterlll@gmail.com</b>, copia y pega el código para validar tu cuenta.</p>
+        <p class="mensajeSecundario">Recuerda revisar la bandeja de correo no deseado (Spam) es probable que los correos electrónicos que te enviamos se encuentren allí.</p>
+
+        <form class="formulario">
+            <mat-form-field class="itemFormulario">
+              <input matInput placeholder="Código de Confirmación" value="">
+              <mat-error>Código de confirmación incorrecto</mat-error>
+            </mat-form-field>
+
+
+        </form>
+
+        <button mat-button class="btnSistema" routerLink='/finalizar'>CONTINUAR</button>
+
+    </div>
+</div>

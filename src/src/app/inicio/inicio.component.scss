@@ -1,0 +1,164 @@
+.inicio {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  height: 100%;
+}
+
+/deep/ .mat-progress-bar-fill::after {
+  background-color: #4186e1 !important;
+}
+
+/deep/ .mat-progress-bar {
+  height: 3px !important;
+}
+
+// ----- CONTENEDOR IZQUIERDO ------
+
+.contenedorRegistro {
+  background-color: #4186e1;
+  height: 100%;
+  width: 25%;
+  padding: 100px 40px 0 40px;
+}
+
+.textCuentaDeUsuario {
+  margin-bottom: 5px;
+  color: rgba(0,0,0,.8);
+}
+
+.textRegistrame {
+  color: #4186e1;
+  font-weight: lighter;
+  font-size: 25px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.formulario {
+  width: 100%;
+}
+
+.itemFormulario {
+  width: 100%;
+}
+
+input {
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+}
+
+:host /deep/ .mat-form-field-label{
+    color: white !important;
+}
+
+:host /deep/ .mat-input-element {
+  caret-color: grey;
+}
+
+
+.btnRegistro {
+  background-color:white;
+  // color: #4186e1;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+// ----- CONTENEDOR DERECHO ------
+
+.bloqueInfo {
+  width: 75%;
+  padding: 100px;
+  // background: linear-gradient(to bottom, rgba(255,255,255, 1), rgba(65,134,255, .9)),url("/assets/img/fondo.jpg");
+}
+
+.textPregunta {
+  margin: 10px 0 0 0;
+  font-weight: bold;
+}
+
+.textRespuesta {
+  font-style: oblique;
+  color: #222222;
+  margin: 5px 0 20px 0;
+
+}
+
+.imgLogo {
+  margin-top: 40px;
+  width: 220px;
+}
+
+.imgLogoAlternativo {
+  display: none;
+}
+
+
+
+@media screen and (min-width: 1600px){
+}
+
+@media screen and (max-width: 768px){
+  .bloqueInfo {
+    display: none;
+  }
+  .inicio {
+    padding: 0px;
+
+  }
+
+  .contenedorRegistro {
+    width: 100%;
+    background-color: white;
+    padding: 60px 40px 0 40px;
+
+
+  }
+
+  .textCuentaDeUsuario {
+    color: grey;
+  }
+
+  .textRegistrame {
+      color: black;
+  }
+
+
+
+  .formulario {
+    min-width: 100%;
+    max-width: 100%x;
+    width: 100%;
+  }
+
+  :host /deep/ .mat-form-field-label{
+      color: #4186e1 !important;
+  }
+
+  :host /deep/ .mat-input-element {
+    caret-color: grey;
+  }
+
+
+
+  input {
+    color: #4186e1;
+  }
+  .btnRegistro {
+    background-color: #4186e1;
+    color: white;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .imgLogoAlternativo {
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 220px;
+  }
+
+}
