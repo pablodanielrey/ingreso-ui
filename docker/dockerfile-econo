@@ -33,8 +33,8 @@ RUN ng set --global packageManager=yarn
 COPY src /src
 WORKDIR /src
 
-RUN cd /src/users-ui && yarn install
-RUN cd /src/users-ui && ng build --configuration=econo --build-optimizer --aot --i18n-file src/messages.xlf --i18n-format xlf --i18n-locale es
+RUN cd /src/ingreso-ui && yarn install
+RUN cd /src/ingreso-ui && ng build --configuration=prod --build-optimizer --aot --i18n-file src/messages.xlf --i18n-format xlf --i18n-locale es
 EXPOSE 80
 
 ENTRYPOINT ["/entrypoint.sh"]
