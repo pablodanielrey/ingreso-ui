@@ -9,6 +9,8 @@ import { FinalizarComponent } from './finalizar/finalizar.component';
 import { UsuarioExistenteComponent } from './problemas/usuario-existente/usuario-existente.component';
 import { ErrorServidorComponent } from './problemas/error-servidor/error-servidor.component';
 import { ContactoComponent } from './problemas/contacto/contacto.component';
+import { DniNoExisteComponent } from './problemas/dni-no-existe/dni-no-existe.component';
+
 
 
 
@@ -21,6 +23,7 @@ const routes: Routes = [
   { path: 'problemas',
       children: [
       { path: 'usuario-existente', component: UsuarioExistenteComponent },
+      { path: 'dni-no-existe', component: DniNoExisteComponent },
       { path: 'error-servidor', component: ErrorServidorComponent },
       { path: 'contacto', component: ContactoComponent }
       ]

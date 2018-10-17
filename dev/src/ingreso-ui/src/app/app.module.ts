@@ -12,7 +12,8 @@ import {
   MatIconModule,
   MatMenuModule,
   MatProgressBarModule,
-  MatSelectModule
+  MatSelectModule,
+  MatCardModule
 
 } from '@angular/material';
 
@@ -26,6 +27,7 @@ import { UsuarioExistenteComponent } from './problemas/usuario-existente/usuario
 import { ErrorServidorComponent } from './problemas/error-servidor/error-servidor.component';
 import { ContactoComponent } from './problemas/contacto/contacto.component';
 import { environment } from '../environments/environment';
+import { DniNoExisteComponent } from './problemas/dni-no-existe/dni-no-existe.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { environment } from '../environments/environment';
     UsuarioExistenteComponent,
     ErrorServidorComponent,
     ContactoComponent,
+    DniNoExisteComponent,
 
   ],
   imports: [
@@ -53,6 +56,7 @@ import { environment } from '../environments/environment';
     MatMenuModule,
     MatProgressBarModule,
     MatSelectModule,
+    MatCardModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
