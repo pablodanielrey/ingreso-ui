@@ -1,20 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import {
-  MatButtonModule,
-  MatCheckboxModule,
-  MatToolbarModule,
-  MatDividerModule,
-  MatInputModule,
-  MatFormFieldModule,
-  MatIconModule,
-  MatMenuModule,
-  MatProgressBarModule,
-  MatSelectModule
+// import {
+//   MatButtonModule,
+//   MatCheckboxModule,
+//   MatToolbarModule,
+//   MatDividerModule,
+//   MatInputModule,
+//   MatFormFieldModule,
+//   MatIconModule,
+//   MatMenuModule,
+//   MatProgressBarModule,
+//   MatSelectModule
 
-} from '@angular/material';
+// } from '@angular/material';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +26,8 @@ import { UsuarioExistenteComponent } from './problemas/usuario-existente/usuario
 import { ErrorServidorComponent } from './problemas/error-servidor/error-servidor.component';
 import { ContactoComponent } from './problemas/contacto/contacto.component';
 import { environment } from '../environments/environment';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -41,18 +43,20 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatToolbarModule,
-    MatDividerModule,
-    MatInputModule,
+    // BrowserAnimationsModule,
+    // MatButtonModule,
+    // MatCheckboxModule,
+    // MatToolbarModule,
+    // MatDividerModule,
+    // MatInputModule,
     AppRoutingModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatMenuModule,
-    MatProgressBarModule,
-    MatSelectModule,
+    MaterialModule,
+    // MatFormFieldModule,
+    // MatIconModule,
+    // MatMenuModule,
+    // MatProgressBarModule,
+    // MatSelectModule,
+    ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

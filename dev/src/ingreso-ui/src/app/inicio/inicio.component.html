@@ -5,11 +5,11 @@
   <div class="contenedorRegistro">
     <p class="textCuentaDeUsuario">CUENTA DE USUARIO FCE<p>
     <p class="textRegistrame">¡Registrarme ahora!</p>
-    <form class="formulario">
+    <form class="formulario" [formGroup]='form' (ngSubmit)='aceptar()'>
       <mat-form-field class="itemFormulario">
-        <input matInput placeholder="Ingresa tu DNI" value="">
+        <input matInput placeholder="Ingresa tu DNI" formControlName='dni' name="dni" type="text">
       </mat-form-field>
-      <button mat-button class="btnRegistro" routerLink='/registro'>REGISTRARME</button>
+      <button mat-button class="btnRegistro" type="submit" [disabled]="form.invalid">REGISTRARME</button>
 
     </form>
 

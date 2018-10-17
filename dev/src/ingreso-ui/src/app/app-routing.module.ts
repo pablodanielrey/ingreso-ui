@@ -13,8 +13,7 @@ import { ContactoComponent } from './problemas/contacto/contacto.component';
 
 
 const routes: Routes = [
-  {
-    path: 'inicio', component: InicioComponent},
+  { path: 'inicio', component: InicioComponent},
   { path: 'registro', component: RegistroComponent },
   { path: 'codigo', component: CodigoComponent },
   { path: 'finalizar', component: FinalizarComponent },
@@ -32,7 +31,9 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ 
+    RouterModule.forRoot(routes) 
+  ],
   exports: [ RouterModule ],
 })
 export class AppRoutingModule { }
