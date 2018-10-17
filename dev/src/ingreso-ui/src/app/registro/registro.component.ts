@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormGroup, FormBuilder, Validators, ValidationErrors, AbstractControl } from '@angular/forms';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -9,12 +9,15 @@ export class RegistroComponent implements OnInit {
 
   n: number = 1;
   procesando: boolean = false;
+  form: FormGroup;
 
-  constructor() {
-   setTimeout(() => {
-     this.n = this.n + 5;
-   }, 1);
- }
+  constructor(private fb: FormBuilder) {
+    this.form = fb.group( {
+      nombre: '',
+      apellido: '',
+      dni: ''
+    });
+  }
 
   ngOnInit() {
   }
