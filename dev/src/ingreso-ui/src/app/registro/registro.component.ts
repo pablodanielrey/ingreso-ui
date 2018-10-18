@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, ValidationErrors, AbstractControl, ValidatorFn } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ValidationErrors, AbstractControl } from '@angular/forms';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -14,7 +16,7 @@ export class RegistroComponent implements OnInit {
   opciones_sexo: string[] = ["Otro","masculino", "femenino"];
   hide: boolean = true;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.form = fb.group( {
       nombre: [{value: '', disabled: true}],
       apellido: [{value: '', disabled: true}],
@@ -37,6 +39,13 @@ export class RegistroComponent implements OnInit {
 
   validar_claves(f:AbstractControl): null | ValidationErrors {
     return f.value['clave1'] == f.value['clave2'] ? null : { claves: true }
+  }
+
+  aceptar() {
+    if (this.form.invalid) {
+      return;
+    }
+    this.router.navigate(['./codigo']) 
   }
 
 

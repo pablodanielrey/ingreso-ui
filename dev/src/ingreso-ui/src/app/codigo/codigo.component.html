@@ -29,15 +29,14 @@
         <p class="mensajePrincipal">Te hemos enviado un código de confirmación a <b>lllwalterlll@gmail.com</b>, copia y pega el código para validar tu cuenta.</p>
         <p class="mensajeSecundario">Recuerda revisar la bandeja de correo no deseado (Spam) es probable que los correos electrónicos que te enviamos se encuentren allí.</p>
 
-        <!-- <form class="formulario">
+        <form class="formulario" [formGroup]='form' (ngSubmit)='aceptar()'>
             <mat-form-field class="itemFormulario">
-              <input matInput placeholder="Código de Confirmación" value="">
-              <mat-error>Código de confirmación incorrecto</mat-error>
+              <input matInput placeholder="Código de Confirmación" formControlName="codigo">              
             </mat-form-field>
+            <mat-error *ngIf="error_codigo">Código de confirmación incorrecto</mat-error>
+            <button mat-button class="btnSistema" type="submit" [disabled]='form.invalid'>CONTINUAR</button>
 
-            <button mat-button class="btnSistema" routerLink='/finalizar'>CONTINUAR</button>
-
-        </form> -->
+        </form>
 
     </div>
 </div>
