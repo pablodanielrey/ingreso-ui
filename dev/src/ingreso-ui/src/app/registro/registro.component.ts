@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidationErrors, AbstractControl } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -15,8 +15,13 @@ export class RegistroComponent implements OnInit {
   form: FormGroup;
   opciones_sexo: string[] = ["Otro","masculino", "femenino"];
   hide: boolean = true;
+  sesion_id: string = null;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private route: ActivatedRoute, private router: Router) {
+    this.route.paramMap.subscribe(p => {
+      this.sesion_id = p.get('sid');
+    });
+
     this.form = fb.group( {
       nombre: [{value: '', disabled: true}],
       apellido: [{value: '', disabled: true}],

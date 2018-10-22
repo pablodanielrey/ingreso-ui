@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutingModule } from './app-routing.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { RegistroComponent } from './registro/registro.component';
+import { IngresoService } from './ingreso.service'
 import { CodigoComponent } from './codigo/codigo.component';
 import { FinalizarComponent } from './finalizar/finalizar.component';
 import { UsuarioExistenteComponent } from './problemas/usuario-existente/usuario-existente.component';
@@ -34,10 +35,13 @@ import { MaterialModule } from './material.module';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
+    HttpClientModule,
     ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [
+    IngresoService
+  ],
   bootstrap: [AppComponent]
 })
 
