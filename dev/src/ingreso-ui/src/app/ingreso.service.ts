@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { environment } from '../environments/environment'
 import { Observable } from 'rxjs/internal/Observable';
+import { DatosIngreso } from './entities/ingreso';
+import { map } from 'rxjs/operators';
 
 const INGRESO_API_URL = environment.ingresoApiUrl
 
@@ -19,12 +21,12 @@ export class IngresoService {
     return this.http.get<any>(apiUrl);
   }
 
-  obtener_datos(sesion: string): Observable<any> {
+  obtener_datos(sesion: string): Observable<DatosIngreso> {
     let apiUrl = `${INGRESO_API_URL}/datos/${sesion}`;
-    return this.http.get<any>(apiUrl);
+    return this.http.get<DatosIngreso>(apiUrl).pipe(map(info => new DatosIngreso(info['usuario'])));
   }
 
-  actualizar_datos(sesion: string, usuario: string): Observable<any> {
+  actualizar_datos(sesion: string, usuario: any): Observable<any> {
     let apiUrl = `${INGRESO_API_URL}/datos/${sesion}`;
     return this.http.post<any>(apiUrl, usuario);
   }
