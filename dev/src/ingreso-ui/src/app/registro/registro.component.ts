@@ -82,13 +82,11 @@ export class RegistroComponent implements OnInit {
     this.subscriptions.push(this.service.actualizar_datos(this.sesion_id, datos)
     .subscribe(r => {
       if (r['estado'] == 'ok') {
-        // this.router.navigate(['./codigo/' + this.sesion_id])     
-        this.router.navigate(['./codigo/'])     
+        this.router.navigate(['./codigo/' + this.sesion_id])     
       }
     }, err => {
       console.log(err);
     }))
-    // this.router.navigate(['./codigo']) 
   }
 
 

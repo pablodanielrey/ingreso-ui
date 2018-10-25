@@ -17,7 +17,7 @@ import { DniNoExisteComponent } from './problemas/dni-no-existe/dni-no-existe.co
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent},
   { path: 'registro/:sid', component: RegistroComponent },
-  { path: 'codigo', component: CodigoComponent },
+  { path: 'codigo/:sid', component: CodigoComponent },
   { path: 'finalizar', component: FinalizarComponent },
   { path: 'problemas',
       children: [
