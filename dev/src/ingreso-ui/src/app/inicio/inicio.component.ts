@@ -23,6 +23,7 @@ export class InicioComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.procesando = false;
   }
 
   ngOnDestroy() {
@@ -36,12 +37,25 @@ export class InicioComponent implements OnInit {
       return;
     }
 
+    this.procesando = true;
+
     this.subscriptions.push(this.service.verificar_dni(this.form.get('dni').value)
     .subscribe(r => {
-      console.log(r);
+      this.procesando = false;
       if ('sesion' in r) {
         this.router.navigate(['./registro/' + r['sesion']])    
       }
+    }, err => {
+      this.procesando = false;
+      if ('error' in err && err.error == "no permitido") {
+        this.router.navigate(['/problemas/dni-no-existe/' + this.form.get('dni').value]);
+        return;
+      }
+      if ('error' in err && err.error == "el usuario ya fue registrado") {
+        this.router.navigate(['/problemas/usuario-existente/' + this.form.get('dni').value]);
+        return;
+      } 
+      this.router.navigate(['/problemas/error-servidor']);
     }));
 
     

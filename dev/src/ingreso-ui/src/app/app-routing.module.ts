@@ -21,8 +21,8 @@ const routes: Routes = [
   { path: 'finalizar', component: FinalizarComponent },
   { path: 'problemas',
       children: [
-      { path: 'usuario-existente', component: UsuarioExistenteComponent },
-      { path: 'dni-no-existe', component: DniNoExisteComponent },
+      { path: 'usuario-existente/:dni', component: UsuarioExistenteComponent },
+      { path: 'dni-no-existe/:dni', component: DniNoExisteComponent },
       { path: 'error-servidor', component: ErrorServidorComponent },
       { path: 'contacto', component: ContactoComponent }
       ]

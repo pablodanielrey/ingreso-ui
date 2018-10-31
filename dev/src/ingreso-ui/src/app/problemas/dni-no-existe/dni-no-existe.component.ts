@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dni-no-existe',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DniNoExisteComponent implements OnInit {
 
-  constructor() { }
+  dni: string =  '';
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(p => {
+      this.dni = p.get('dni');
+    });    
   }
 
 }
