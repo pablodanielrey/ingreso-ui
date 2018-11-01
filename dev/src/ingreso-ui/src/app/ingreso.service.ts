@@ -31,6 +31,11 @@ export class IngresoService {
     return this.http.post<any>(apiUrl, usuario);
   }
 
+  obtener_correo(sesion: string): Observable<string> {
+    let apiUrl = `${INGRESO_API_URL}/sesion/${sesion}/correo`;
+    return this.http.get<string>(apiUrl);
+  }
+
   confirmar_cambios(sesion: string, codigo: string): Observable<any> {
     let apiUrl = `${INGRESO_API_URL}/datos/${sesion}/confirmar`;
     let data = {

@@ -34,7 +34,7 @@ export class RegistroComponent implements OnInit {
       genero: ['',[Validators.required]],
       correo1: ['', [Validators.required, Validators.email]],
       correo2: ['', [Validators.required, Validators.email, this.validar_correos]],
-      clave1: ['',[Validators.required]],
+      clave1: ['',[Validators.required,Validators.minLength(8)]],
       clave2: ['',[Validators.required]]
     }, { validator: [this.validar_correos, this.validar_claves] });    
 
@@ -50,6 +50,7 @@ export class RegistroComponent implements OnInit {
   }  
 
   obtener_datos() {
+    this.procesando = true;
     this.subscriptions.push(this.service.obtener_datos(this.sesion_id)
     .subscribe(r => {
       let info: DatosIngreso =  r;
@@ -57,6 +58,10 @@ export class RegistroComponent implements OnInit {
       this.form.get('apellido').setValue(info.apellido);
       this.form.get('dni').setValue(info.dni);
       this.form.get('genero').setValue(info.genero);
+      this.procesando = false;
+    }, err => {
+      this.procesando = false;
+      this.router.navigate(['/problemas/error-servidor']);      
     }));
   }
 
@@ -78,14 +83,16 @@ export class RegistroComponent implements OnInit {
       'correo': this.form.get('correo1').value,
       'clave': this.form.get('clave1').value   
     };
-    
+    this.procesando = true;
     this.subscriptions.push(this.service.actualizar_datos(this.sesion_id, datos)
     .subscribe(r => {
+      this.procesando = false;
       if (r['estado'] == 'ok') {
         this.router.navigate(['./codigo/' + this.sesion_id])     
       }
     }, err => {
-      console.log(err);
+      this.procesando = false;
+      this.router.navigate(['/problemas/error-servidor']);
     }))
   }
 
