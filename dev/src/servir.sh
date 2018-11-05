@@ -1,2 +1,2 @@
 #!/bin/bash
-ng serve --host 0.0.0.0 --configuration=vs --disable-host-check
+ng serve --host 0.0.0.0 --configuration=local-econo --disable-host-check

@@ -3,12 +3,6 @@
   <mat-toolbar class="header" >
     <i class="material-icons iconoSistema">school</i>
     <p class="textNombreSistema">Sistema de Ingreso</p>
-      <button mat-button [matMenuTriggerFor]="menu">Errores</button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink='/problemas/dni-no-existe'>DNI no existe</button>
-        <button mat-menu-item routerLink='/problemas/usuario-existente'>Usuario Existente</button>
-        <button mat-menu-item routerLink='/problemas/error-servidor'>Error de Servidor</button>
-      </mat-menu>
   </mat-toolbar>
 
   <div class="contenido">
