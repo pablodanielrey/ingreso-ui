@@ -26,16 +26,20 @@
 
         <h1>Confirmar Cuenta</h1>
         <mat-progress-bar mode="determinate" value="{{n}}"></mat-progress-bar>
-        <p class="mensajePrincipal">Te hemos enviado un código de confirmación a <b>{{ correo }}</b>, copia y pega el código para validar tu cuenta.</p>
-        <p class="mensajeSecundario">Recuerda revisar la bandeja de correo no deseado (Spam) es probable que los correos electrónicos que te enviamos se encuentren allí.</p>
+        <p class="mensajePrincipal">Te hemos enviado un código de confirmación a <b>{{ correo }}</b>, copia y pega el código para activar tu cuenta.</p>
+        <p class="mensajeSecundario">Recordá revisar la bandeja de ”correo no deseado” (spam) . Es probable que el correo electrónico que te enviamos se encuentra allí. Por favor marcalo como “es correo deseado”</p>
 
         <form class="formulario" [formGroup]='form' (ngSubmit)='aceptar()'>
             <mat-form-field class="itemFormulario">
               <input matInput placeholder="Código de Confirmación" formControlName="codigo">              
-            </mat-form-field>  
+            </mat-form-field> 
             
-            <mat-error *ngIf="error_codigo">Código de confirmación incorrecto</mat-error>
-            <!-- <mat-error *ngIf="form.hasError('codigo')">Código de confirmación incorrecto</mat-error> -->
+            <div class="contenedorErrores" *ngIf="error_codigo">
+                    <div><i class="material-icons icono">error_outline </i></div>
+                    <div> Código de confirmación incorrecto </div>
+            </div>
+            
+
             <button mat-button class="btnSistema" type="submit" [disabled]='form.invalid'>CONTINUAR</button>
 
         </form>
