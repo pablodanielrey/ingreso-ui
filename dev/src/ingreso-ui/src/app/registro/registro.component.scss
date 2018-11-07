@@ -89,6 +89,10 @@ h1 {
   padding: 5px;
 }
 
+.mat-input-element:disabled {
+  color:black;
+}
+
 .iconos {
   margin-right: 10px;
   color: grey;
