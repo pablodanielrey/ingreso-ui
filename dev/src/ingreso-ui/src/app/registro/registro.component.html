@@ -76,6 +76,19 @@
       
    
             </mat-form-field>
+
+            <div class="contenedorErrores" *ngIf="form.hasError('correos')">
+              <div><i class="material-icons icono">error_outline </i></div>
+              <div> Los correos no coinciden </div>
+            </div>
+
+            <div class="contenedorErrores" *ngIf="form.hasError('claves')">
+                <div><i class="material-icons icono">error_outline </i></div>
+                <div> Las contraseñas no coinciden </div>
+            </div>
+
+
+
             <!-- <div>
                 <mat-error *ngIf="form.hasError('correos')">Los correos no coinciden</mat-error>             
                 <mat-error *ngIf="form.hasError('claves')">Las claves no coinciden</mat-error>

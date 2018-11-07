@@ -32,10 +32,14 @@
         <form class="formulario" [formGroup]='form' (ngSubmit)='aceptar()'>
             <mat-form-field class="itemFormulario">
               <input matInput placeholder="Código de Confirmación" formControlName="codigo">              
-            </mat-form-field>  
+            </mat-form-field> 
             
-            <mat-error *ngIf="error_codigo">Código de confirmación incorrecto</mat-error>
-            <!-- <mat-error *ngIf="form.hasError('codigo')">Código de confirmación incorrecto</mat-error> -->
+            <div class="contenedorErrores" *ngIf="error_codigo">
+                    <div><i class="material-icons icono">error_outline </i></div>
+                    <div> Código de confirmación incorrecto </div>
+            </div>
+            
+
             <button mat-button class="btnSistema" type="submit" [disabled]='form.invalid'>CONTINUAR</button>
 
         </form>
