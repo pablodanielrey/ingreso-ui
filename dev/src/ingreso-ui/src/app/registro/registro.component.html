@@ -28,43 +28,73 @@
         <mat-progress-bar mode="determinate" value="{{n}}"></mat-progress-bar>
 
 
-        <form class="formulario">
+        <form class="formulario" [formGroup]='form' (ngSubmit)='aceptar()'>
             <mat-form-field class="itemFormulario">
-              <input matInput placeholder="Nombre" value="Walter Roberto">
+              <input matInput placeholder="Nombre" name="nombre" formControlName='nombre'>
             </mat-form-field>
             <mat-form-field class="itemFormulario">
-              <input matInput placeholder="Apellido" value="Blanco">
+              <input matInput placeholder="Apellido" name="apellido" formControlName='apellido'>
             </mat-form-field>
             <mat-form-field class="itemFormulario">
-              <input matInput placeholder="DNI" value="30001823">
+              <input matInput placeholder="DNI" name="dni" formControlName='dni'>
             </mat-form-field>
+            
             <mat-form-field class="itemFormulario">
-              <mat-select placeholder="Sexo">
-                <mat-option value="option">Femenino</mat-option>
-                <mat-option value="option">Masculino</mat-option>
-                <mat-option value="option">Otro</mat-option>
+              <mat-select placeholder="Sexo" formControlName="genero">
+                  <mat-option *ngFor="let genero of opciones_sexo" [value]="genero">{{ genero | titlecase }}</mat-option>
               </mat-select>
             </mat-form-field>
+
+            <!-- CORREOS -->
+
             <mat-form-field class="itemFormulario">
               <mat-icon class="iconos" matPrefix>mail_outline</mat-icon>
-              <input matInput placeholder=" Correo Electrónico" value="">
+              <input matInput placeholder="Ingresá tu correo electrónico" formControlName='correo1' disableCopyPaste>
             </mat-form-field>
             <mat-form-field class="itemFormulario">
               <mat-icon class="iconos" matPrefix>mail_outline</mat-icon>
-              <input matInput placeholder="Repetir Correo Electrónico" value="">
+              <input matInput placeholder="Repetí tu correo electrónico" formControlName='correo2' disableCopyPaste> 
+              <mat-error *ngIf="form.hasError('correos')">Los correos no coinciden</mat-error>             
+
+            <!-- CONTRASEÑA -->
+                
+            </mat-form-field>
+           <mat-form-field class="itemFormulario">
+              <mat-icon class="iconos" matPrefix>lock_open</mat-icon>
+              <input matInput placeholder="Ingresá una contraseña" [type]="hide ? 'password' : 'text'" formControlName='clave1' disableCopyPaste>                            
+              <mat-hint> Requisitos: La contraseña debe tener al menos con 8 caracteres  </mat-hint>
+              <mat-error *ngIf="form.get('clave1').errors?.minlength">
+                    La contraseña debe tener al menos con 8 caracteres
+              </mat-error>
+              
             </mat-form-field>
             <mat-form-field class="itemFormulario">
               <mat-icon class="iconos" matPrefix>lock_open</mat-icon>
-              <input matInput placeholder="Repetir Contraseña" [type]="hide ? 'password' : 'text'">
-            </mat-form-field>
-            <mat-form-field class="itemFormulario">
-              <mat-icon class="iconos" matPrefix>lock_open</mat-icon>
-              <input matInput  placeholder="Repetir Contraseña" [type]="hide ? 'password' : 'text'">
-                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+              <input matInput placeholder="Repetí la contraseña" [type]="hide ? 'password' : 'text'" formControlName='clave2' disableCopyPaste>
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+              <mat-error *ngIf="form.hasError('claves')">Las contraseñas no coinciden</mat-error>
+      
+   
             </mat-form-field>
 
-            <button mat-button class="btnSistema" routerLink='/codigo'>CONTINUAR</button>
+            <div class="contenedorErrores" *ngIf="form.hasError('correos')">
+              <div><i class="material-icons icono">error_outline </i></div>
+              <div> Los correos no coinciden </div>
+            </div>
 
+            <div class="contenedorErrores" *ngIf="form.hasError('claves')">
+                <div><i class="material-icons icono">error_outline </i></div>
+                <div> Las contraseñas no coinciden </div>
+            </div>
+
+
+
+            <!-- <div>
+                <mat-error *ngIf="form.hasError('correos')">Los correos no coinciden</mat-error>             
+                <mat-error *ngIf="form.hasError('claves')">Las claves no coinciden</mat-error>
+            </div>             -->
+            <button mat-button class="btnSistema" type="submit" [disabled]="form.invalid">CONTINUAR</button>
+  
         </form>
     </div>
 </div>

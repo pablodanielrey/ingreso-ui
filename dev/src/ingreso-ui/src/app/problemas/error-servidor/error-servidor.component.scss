@@ -1,0 +1,91 @@
+.contenido {
+  height: 100%;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  padding: 40px;
+
+}
+
+.cabeceraContenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icono {
+  font-size: 100px;
+  color: grey;
+}
+
+.textError {
+  font-weight: lighter;
+  font-size: 30px;
+  // color: grey;
+  margin: 0 auto;
+}
+
+
+.mensajeError {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-weight: lighter;
+  color: #4186e1;
+  margin-bottom: 10px;
+  text-align: center;
+
+}
+
+.mensaje {
+  margin-top: 5px;
+}
+
+.link {
+  text-decoration: none;
+  color: #4186e1;
+  // font-weight: bold;
+  font-style: oblique;
+}
+
+.icoContacto {
+  color: grey;
+
+}
+
+.mensajeContacto {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contenedorBoton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+
+.btnVolver {
+  background-color: rgba(0,0,0,.12);
+  margin-top: 20px;
+}
+
+
+
+@media screen and (max-width: 719px) {
+
+  .contenido {
+    width: 100%;
+  }
+
+}

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-usuario-existente',
-  templateUrl: './usuario-existente.component.html',
-  styleUrls: ['./usuario-existente.component.scss']
+  selector: 'app-dni-no-existe',
+  templateUrl: './dni-no-existe.component.html',
+  styleUrls: ['./dni-no-existe.component.scss']
 })
-export class UsuarioExistenteComponent implements OnInit {
+export class DniNoExisteComponent implements OnInit {
 
   dni: string =  '';
   constructor(private route: ActivatedRoute) { }
@@ -14,7 +14,7 @@ export class UsuarioExistenteComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(p => {
       this.dni = p.get('dni');
-    });     
+    });    
   }
 
 }

@@ -110,6 +110,22 @@ input {
   margin-left: 10px;
 }
 
+.contenedorErrores {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f44336;
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+margin-bottom: 20px;
+  width: 50%;
+}
+
+.icono {
+  margin-right: 5px;
+}
+
 @media screen and (max-width: 768px){
   .conenedorInfo {
     display: none;

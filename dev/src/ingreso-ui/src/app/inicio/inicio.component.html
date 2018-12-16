@@ -5,11 +5,11 @@
   <div class="contenedorRegistro">
     <p class="textCuentaDeUsuario">CUENTA DE USUARIO FCE<p>
     <p class="textRegistrame">¡Registrarme ahora!</p>
-    <form class="formulario">
-      <mat-form-field class="itemFormulario">
-        <input matInput placeholder="Ingresa tu DNI" value="">
+    <form class="formulario" [formGroup]='form' (ngSubmit)='aceptar()'>
+      <mat-form-field class="itemFormulario" >
+        <input matInput placeholder="Ingresa tu DNI" formControlName='dni' name="dni" type="text">
       </mat-form-field>
-      <button mat-button class="btnRegistro" routerLink='/registro'>REGISTRARME</button>
+      <button mat-button class="btnRegistro" type="submit" [disabled]="form.invalid">REGISTRARME</button>
 
     </form>
 
@@ -20,10 +20,14 @@
       <h4>INGRESANTES 2019</h4>
       <h1>ALTA DE USUARIO FCE</h1>
       <p class="textPregunta">¿Para que necesito crear una cuenta de usuario de la Facultad de Ciencias Económicas?</p>
-      <p class="textRespuesta">Será necesario tener con una cuenta para acceder a los servicios informáticos de la FCE, como por ejemplo:
-        Aula Virtual (AU24), WiFi de la FCE, Inscripción a cursos de formación,
+      <p class="textRespuesta">Será necesario tener una cuenta para acceder a los servicios informáticos de la FCE, 
+        como por ejemplo: Aula Virtual (AU24), WiFi de la FCE, Inscripción a cursos de formación, 
         Inscripción al sistema de pasantías educativas, etc.
       </p>
+      <p class="textRespuesta">Deberás ingresar tu número de documento (DNI o pasaporte) tal como figura en la Constancia de 
+        Confirmación de la inscripción.<br> Con tu DNI y la clave entrarás en AU24, podrás conectarte a la WiFI, etc
+      </p>
+      <p class="textRespuesta"><b>El SIU tiene una cuenta diferente.</b>  </p>
       <mat-divider></mat-divider>
       <div class="logoFCE">
         <img class="imgLogo" height="" width="" src="/assets/img/logo_fce.png">
